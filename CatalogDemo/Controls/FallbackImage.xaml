@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="CatalogDemo.Controls.FallbackImage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CatalogDemo.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" x:Name="FallbackIm">
+    <Grid DataContext="{Binding ElementName=FallbackIm}">
+        <Image x:Name="DefaultIm" Source="{Binding Path=FallbackSource}" Visibility="Collapsed"></Image>
+        <Image x:Name="CurrentIm" Source="{Binding Path=Source}" ImageFailed="CurrentIm_ImageFailed" Visibility="Collapsed"></Image>
+    </Grid>
+</UserControl>
